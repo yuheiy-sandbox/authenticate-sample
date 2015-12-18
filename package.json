@@ -1,0 +1,38 @@
+{
+  "name": "authenticate-sample",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "foreman start -f Procfile_dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuheiy/authenticate-sample.git"
+  },
+  "author": "Yuhei Yasuda <yuhei.yasuda1003@gmail.com> (http://yhey.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuheiy/authenticate-sample/issues"
+  },
+  "homepage": "https://github.com/yuheiy/authenticate-sample#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^1.0.2",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "jade": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "foreman": "^1.4.1",
+    "nodemon": "^1.8.1"
+  },
+  "engines": {
+    "node": "4.2.3"
+  }
+}
