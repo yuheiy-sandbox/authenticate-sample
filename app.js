@@ -20,9 +20,8 @@ passport.deserializeUser((user, done) => {
 });
 
 passport.use(new LocalStrategy((username, password, done) => {
-  // const { ADMIN_USERNAME, ADMIN_PASSWORD } = process.env;
-  const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+  const ADMIN_USERNAME = 'user';
+  const ADMIN_PASSWORD = 'pass';
 
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
     console.log('success');
@@ -34,7 +33,7 @@ passport.use(new LocalStrategy((username, password, done) => {
 }));
 
 const app = express();
-const MongoStore = require('connect-mongo')(session);
+// const MongoStore = require('connect-mongo')(session);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -46,7 +45,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  store: new MongoStore({ url: process.env.MONGOLAB_URI })
+  // store: new MongoStore({ url: process.env.MONGOLAB_URI })
 }));
 app.use(require('connect-flash')());
 app.use(passport.initialize());
